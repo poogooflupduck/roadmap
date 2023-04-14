@@ -22,7 +22,6 @@ export default function Home(props) {
   );
   const handler = (e) => {
     setValue(e.target.value);
-    console.log(e.target.value);
   };
 
   const ref = useRef(<div></div>);
