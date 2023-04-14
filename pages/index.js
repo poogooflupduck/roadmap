@@ -7,8 +7,9 @@ import {
   Select,
   Button,
   Link,
+  Spacer
 } from "@geist-ui/core";
-import { Github } from "@geist-ui/icons";
+import { Github, Download } from "@geist-ui/icons";
 import ThemeButton from "@/components/ThemeButton";
 import Checkbox from "@/components/Checkbox";
 import Line from "@/components/Line";
@@ -17,7 +18,7 @@ import { toPng, toSvg } from "html-to-image";
 
 export default function Home(props) {
   const [value, setValue] = useState(
-    `Send a doge to Mars\nBuild Mars colony\nBuild Starship\nBuild reusable rockets`
+    `Send a Doge to Mars\nBuild Mars colony\nBuild Starship\nBuild reusable rockets`
   );
   const handler = (e) => {
     setValue(e.target.value);
@@ -65,11 +66,14 @@ export default function Home(props) {
         <Link target="_blank" href="https://github.com/poogooflupduck/roadmap">
           <Button icon={<Github />} auto />
         </Link>
+        <Spacer w={0.5} />
         <ThemeButton switchThemes={props.switchThemes} />
-        <Select placeholder="Export as">
+        <Spacer w={0.5} />
+        <Select placeholder="Export as" height="40px">
           <Select.Option onClick={exportPNG} value="1">
             PNG
           </Select.Option>
+          <Select.Option divider />
           <Select.Option onClick={exportSVG} value="2">
             SVG
           </Select.Option>
@@ -92,7 +96,7 @@ export default function Home(props) {
         </Grid>
         <Grid xs={24} md={12}>
           <div style={{ width: "100%" }} ref={ref}>
-            <Card width="100%" minHeight="80vh" style={{ borderRadius: 0 }}>
+            <Card width="100%" height="85vh" style={{ borderRadius: 0 }}>
               <Display height="100%">
                 {value.split("\n").map((node, index) =>
                   index == 0 ? (
@@ -118,7 +122,7 @@ export default function Home(props) {
           >
             <Textarea
               width="100%"
-              height="80vh"
+              height="85vh"
               value={value}
               onChange={handler}
             />
