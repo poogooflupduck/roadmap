@@ -94,24 +94,30 @@ export default function Home(props) {
           </Card>
         </Grid>
         <Grid xs={24} md={12}>
-          <div style={{ width: "100%" }} ref={ref}>
-            <Card width="100%" height="85vh" style={{ borderRadius: 0 }}>
-              <Display height="100%">
-                {value.split("\n").map((node, index) =>
-                  index == 0 ? (
-                    <Checkbox key={index} text={node} />
-                  ) : (
-                    <>
-                      <Line
-                        h={(60 / value.split("\n").length).toString() + "vh"}
-                      />
+          <Card width="100%" height="100%"  style={{ borderRadius: 0}}>
+            <div style={{ width: "100%" }} ref={ref}>
+              <Card
+                width="100%"
+                height="85vh"
+                style={{ borderRadius: 0, border: 0 }}
+              >
+                <Display height="100%">
+                  {value.split("\n").map((node, index) =>
+                    index == 0 ? (
                       <Checkbox key={index} text={node} />
-                    </>
-                  )
-                )}
-              </Display>
-            </Card>
-          </div>
+                    ) : (
+                      <>
+                        <Line
+                          h={(60 / value.split("\n").length).toString() + "vh"}
+                        />
+                        <Checkbox key={index} text={node} />
+                      </>
+                    )
+                  )}
+                </Display>
+              </Card>
+            </div>
+          </Card>
         </Grid>
         <Grid xs={24} md={0}>
           <Card
