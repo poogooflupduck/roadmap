@@ -7,7 +7,7 @@ import {
   Select,
   Button,
   Link,
-  Spacer
+  Spacer,
 } from "@geist-ui/core";
 import { Github, Download } from "@geist-ui/icons";
 import ThemeButton from "@/components/ThemeButton";
@@ -18,7 +18,7 @@ import { toPng, toSvg } from "html-to-image";
 
 export default function Home(props) {
   const [value, setValue] = useState(
-    `Send a Doge to Mars\nBuild Mars colony\nBuild Starship\nBuild reusable rockets`
+    `Roadmap item\nRoadmap item\nRoadmap item\nRoadmap item`
   );
   const handler = (e) => {
     setValue(e.target.value);
@@ -94,7 +94,7 @@ export default function Home(props) {
           </Card>
         </Grid>
         <Grid xs={24} md={12}>
-          <Card width="100%" height="100%"  style={{ borderRadius: 0}}>
+          <Card width="100%" height="100%" style={{ borderRadius: 0 }}>
             <div style={{ width: "100%" }} ref={ref}>
               <Card
                 width="100%"
